@@ -5,6 +5,7 @@ import ScrollFrameSequence from "./components/ScrollFrameSequence";
 import TrustStrip from "./components/TrustStrip";
 import Philosophy from "./components/Philosophy";
 import Provenance from "./components/Provenance";
+import LifestyleGallery from "./components/LifestyleGallery";
 import Product from "./components/Product";
 import RecipeConverter from "./components/RecipeConverter";
 import Comparison from "./components/Comparison";
@@ -31,6 +32,7 @@ function App() {
         <TrustStrip />
         <Philosophy />
         <Provenance />
+        <LifestyleGallery />
         <Product />
         <RecipeConverter />
         <Comparison />
