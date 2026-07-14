@@ -27,7 +27,7 @@ export default function Philosophy() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           whileHover={{ y: -6 }}
           className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl"
@@ -43,7 +43,7 @@ export default function Philosophy() {
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             variants={{ show: { transition: { staggerChildren: 0.12 } } }}
           >
             <motion.span

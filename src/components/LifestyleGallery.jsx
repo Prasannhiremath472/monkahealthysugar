@@ -45,6 +45,14 @@ export default function LifestyleGallery() {
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
   pausedRef.current = paused;
+  const [radius, setRadius] = useState(210);
+
+  useEffect(() => {
+    const updateRadius = () => setRadius(window.innerWidth < 640 ? 85 : 210);
+    updateRadius();
+    window.addEventListener("resize", updateRadius);
+    return () => window.removeEventListener("resize", updateRadius);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,7 +68,7 @@ export default function LifestyleGallery() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
@@ -92,14 +100,13 @@ export default function LifestyleGallery() {
         </motion.div>
 
         <div
-          className="relative h-[34rem] sm:h-[40rem] flex items-center justify-center"
+          className="relative h-[22rem] sm:h-[40rem] flex items-center justify-center"
           style={{ perspective: 1000 }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
           {PHOTOS.map((photo, i) => {
             const angle = angles[i] * (Math.PI / 180);
-            const radius = 210;
             const x = Math.cos(angle) * radius;
             const y = Math.sin(angle) * radius;
 
@@ -108,7 +115,7 @@ export default function LifestyleGallery() {
                 key={photo.id}
                 initial={{ opacity: 0, scale: 0.85 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 animate={{ x, y, rotate: photo.rotation, opacity: 1, scale: 1 }}
                 transition={{
                   x: { duration: 0.05, ease: "linear" },
@@ -117,7 +124,7 @@ export default function LifestyleGallery() {
                   opacity: { duration: 0.6, delay: i * 0.1 },
                   scale: { duration: 0.6, delay: i * 0.1 },
                 }}
-                className="absolute w-44 h-56 sm:w-60 sm:h-72"
+                className="absolute w-24 h-32 sm:w-60 sm:h-72"
               >
                 <motion.div
                   whileHover={{ scale: 1.08, rotate: 0 }}

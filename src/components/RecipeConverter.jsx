@@ -21,7 +21,7 @@ export default function RecipeConverter() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
@@ -40,7 +40,7 @@ export default function RecipeConverter() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="rounded-3xl bg-cream border border-ink/5 shadow-[0_8px_30px_-14px_rgba(32,19,18,0.15)] p-8 md:p-12"
         >

@@ -9,7 +9,7 @@ export default function Comparison() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
           <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
@@ -36,7 +36,7 @@ export default function Comparison() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
                 <p className="text-3xl font-display text-red">{stat.value}</p>
@@ -51,7 +51,7 @@ export default function Comparison() {
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
           whileHover={{ y: -6 }}
           className="rounded-3xl overflow-hidden bg-cream shadow-2xl"

@@ -20,7 +20,7 @@ export default function SavingsCalculator() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
@@ -39,7 +39,7 @@ export default function SavingsCalculator() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="rounded-3xl bg-cream/5 border border-cream/10 backdrop-blur p-8 md:p-12"
         >
@@ -70,7 +70,7 @@ export default function SavingsCalculator() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5 }}
               >
                 <p className="font-display text-4xl md:text-5xl text-cream">

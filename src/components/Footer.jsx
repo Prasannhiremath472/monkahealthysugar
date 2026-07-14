@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-ink text-cream">
+    <footer className="bg-ink text-cream">
       <div className="mx-auto max-w-7xl px-6 md:px-10 py-16">
         <div className="flex items-center gap-3 mb-10">
           <span className="font-display text-2xl">
@@ -12,11 +14,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-cream/70">
-              <li><a href="#top" className="hover:text-red transition-colors">Home</a></li>
-              <li><a href="#story" className="hover:text-red transition-colors">About Us</a></li>
-              <li><a href="#product" className="hover:text-red transition-colors">All Products</a></li>
-              <li><a href="#journal" className="hover:text-red transition-colors">Blog</a></li>
-              <li><a href="#contact" className="hover:text-red transition-colors">Contact Us</a></li>
+              <li><Link to="/" className="hover:text-red transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-red transition-colors">About Us</Link></li>
+              <li><Link to="/shop" className="hover:text-red transition-colors">All Products</Link></li>
+              <li><Link to="/blog" className="hover:text-red transition-colors">Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-red transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -56,7 +58,7 @@ export default function Footer() {
 
         <div className="mt-14 pt-8 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/50">
           <p>© 2026 MONKA | All Rights Reserved</p>
-          <p>Manufactured & Marketed by Winmark Wellness</p>
+          <p>Developed by Infinity Technology Hub</p>
         </div>
       </div>
     </footer>

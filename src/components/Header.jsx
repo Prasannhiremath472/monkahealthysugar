@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import Magnetic from "./Magnetic";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#top" },
-  { label: "Shop", href: "#product" },
-  { label: "About Us", href: "#story" },
-  { label: "Blog", href: "#journal" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Shop", href: "/shop" },
+  { label: "About Us", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(!isHome);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
     const onScroll = () => {
       const hero = document.getElementById("top");
-      const heroHeight = hero ? hero.offsetHeight : 0;
-      setScrolled(window.scrollY > heroHeight - window.innerHeight - 4);
+      const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+      setScrolled(window.scrollY > heroHeight - 80);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -27,7 +34,7 @@ export default function Header() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -46,7 +53,7 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 md:px-10 h-20 flex items-center justify-between">
-          <a href="#top" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src="/monka.co.in/logo.png"
               alt="Monka — where sweeter living begins"
@@ -54,7 +61,7 @@ export default function Header() {
                 isDark ? "drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]" : ""
               }`}
             />
-          </a>
+          </Link>
 
           <nav
             className={`hidden md:flex items-center gap-1 text-sm font-medium rounded-full px-2 py-2 transition-all duration-300 ${
@@ -64,22 +71,26 @@ export default function Header() {
             }`}
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className={`rounded-full px-4 py-1.5 transition-colors ${
-                  isDark ? "hover:bg-cream/15 hover:text-cream" : "hover:text-red"
-                }`}
+                  pathname === link.href
+                    ? isDark
+                      ? "bg-cream/20 text-cream"
+                      : "text-red"
+                    : ""
+                } ${isDark ? "hover:bg-cream/15 hover:text-cream" : "hover:text-red"}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
             <Magnetic
-              as={motion.a}
-              href="#product"
+              as={motion(Link)}
+              to="/shop"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="hidden sm:inline-block rounded-full bg-red text-cream text-sm font-semibold px-6 py-2.5 shadow-md shadow-red/20 hover:bg-maroon transition-colors"
@@ -128,27 +139,32 @@ export default function Header() {
           >
             <nav className="flex flex-col px-6 py-8 gap-1">
               {NAV_LINKS.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.4 }}
-                  className="py-4 text-2xl font-display border-b border-ink/10 text-ink"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block py-4 text-2xl font-display border-b border-ink/10 ${
+                      pathname === link.href ? "text-red" : "text-ink"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
             <div className="mt-auto px-6 pb-10">
-              <a
-                href="#product"
+              <Link
+                to="/shop"
                 onClick={() => setMenuOpen(false)}
                 className="block text-center rounded-full bg-red text-cream text-base font-semibold px-6 py-4 shadow-md shadow-red/20"
               >
                 Shop Now
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
