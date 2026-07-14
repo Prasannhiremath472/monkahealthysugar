@@ -181,7 +181,7 @@ export default function Reels() {
                 {REELS.slice(p * perPage, p * perPage + perPage).map((reel) => (
                   <div
                     key={reel.id}
-                    className="aspect-[9/16] h-[22rem] sm:h-[24rem]"
+                    className="aspect-[9/16]"
                     style={{ width: `calc(${100 / perPage}% - ${(20 * (perPage - 1)) / perPage}px)` }}
                   >
                     <ReelCard reel={reel} />
