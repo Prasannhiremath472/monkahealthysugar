@@ -18,6 +18,15 @@ export default function ScrollFrameSequence() {
       <div className="absolute inset-0 bg-gradient-to-r from-ink/15 via-transparent to-ink/15" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/0 via-transparent to-ink/10" />
       <div className="absolute inset-y-0 left-0 w-full md:w-2/3 bg-gradient-to-r from-ink/45 via-ink/10 to-transparent" />
+
+      <div className="absolute top-24 md:top-28 inset-x-0 z-10 hidden md:flex items-center justify-between px-6 md:px-16 text-[11px] font-semibold tracking-[0.25em] uppercase text-cream/70">
+        <span>Est. Sweeter / 2026</span>
+        <span className="flex items-center gap-2">
+          Zero Calorie <span className="text-red">✦</span> Zero Aftertaste <span className="text-red">✦</span> 1:1 Sugar Swap
+        </span>
+        <span>Vol. 01</span>
+      </div>
+
       <a
         href="#story"
         aria-label="Scroll to discover"
@@ -31,13 +40,21 @@ export default function ScrollFrameSequence() {
         </span>
       </a>
 
-      <div className="absolute inset-y-0 left-0 flex flex-col justify-center max-w-md px-6 md:px-16 text-left z-10">
+      <div className="absolute inset-y-0 left-0 flex flex-col justify-center max-w-2xl px-6 md:px-16 text-left z-10">
         <span className="text-xs font-bold tracking-[0.3em] uppercase text-cream mb-5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
           From the Vine to Your Table
         </span>
-        <h1 className="font-hero font-bold text-6xl md:text-8xl text-cream leading-[0.98] tracking-tight max-w-2xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
-          Where <em className="italic text-red">sweeter</em> living begins.
+
+        <h1 className="font-sans font-black uppercase leading-[0.85] tracking-tight text-cream text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl">
+          <span className="block drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">Sweet,</span>
+          <span className="block italic text-red -my-1 md:-my-3 -rotate-2 origin-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+            but make it
+          </span>
+          <span className="block drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+            Lux<em className="not-italic text-red">u</em>ry.
+          </span>
         </h1>
+
         <p className="mt-7 text-cream text-sm tracking-widest uppercase animate-pulse drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
           Scroll to discover ↓
         </p>

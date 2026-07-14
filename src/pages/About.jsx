@@ -17,14 +17,17 @@ const PURITY_POINTS = [
 
 const PROMISE_CARDS = [
   {
+    n: "01",
     title: "Health First",
     detail: "Zero calories and zero net carbs to support your fitness and wellness goals.",
   },
   {
+    n: "02",
     title: "Taste Always",
     detail: "A clean, sweet profile with zero bitter aftertaste or metallic finish.",
   },
   {
+    n: "03",
     title: "Simplicity Matters",
     detail: "A true 1:1 sugar replacement. One cup of sugar equals one cup of Monka.",
   },
@@ -38,30 +41,58 @@ const fadeUp = {
 export default function About() {
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 md:px-10 pt-32 pb-16 md:pt-40 md:pb-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-4xl md:text-6xl tracking-tight"
-        >
-          About Us
-        </motion.h1>
+      <section className="relative bg-ink text-cream overflow-hidden">
+        <div className="glow top-0 left-1/4 w-[32rem] h-[32rem] bg-red/15" aria-hidden />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10 pt-36 pb-24 md:pt-44 md:pb-32">
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-6"
+          >
+            <span className="h-px w-10 bg-red" />
+            Our Story
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-sans font-black uppercase leading-[0.86] tracking-tight text-4xl sm:text-7xl md:text-8xl"
+          >
+            Sweetness,
+            <br />
+            without
+            <br />
+            <span
+              className="italic"
+              style={{ WebkitTextStroke: "2px var(--color-red)", color: "transparent" }}
+            >
+              compromise.
+            </span>
+          </motion.h1>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-2 gap-14 items-center">
+      <section className="mx-auto max-w-7xl px-6 md:px-10 pt-20 pb-20 md:pt-28 md:pb-28 grid md:grid-cols-2 gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl bg-red"
+          className="relative"
         >
-          <img
-            src="/monka.co.in/about.jpeg"
-            alt="Monka O'Calorie sweetener"
-            className="w-full h-full object-cover"
-          />
+          <div className="absolute -inset-4 md:-inset-6 rounded-[2.5rem] bg-red/10 -rotate-3" />
+          <motion.div
+            whileHover={{ rotate: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="relative aspect-square rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-20px_rgba(32,19,18,0.35)] rotate-2"
+          >
+            <img
+              src="/monka.co.in/about.jpeg"
+              alt="Monka O'Calorie sweetener"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -72,15 +103,16 @@ export default function About() {
         >
           <motion.span
             variants={fadeUp}
-            className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-red mb-4"
+            className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5"
           >
-            Our Story: Sweetness Without Compromise
+            <span className="h-px w-10 bg-red" />
+            Sweetness Without Compromise
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-display text-3xl md:text-4xl leading-[1.1] tracking-tight"
+            className="font-hero text-3xl md:text-5xl leading-[1.05] tracking-tight"
           >
-            The Monka Journey
+            The Monka <em className="italic text-red">journey.</em>
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-6 text-lg leading-relaxed text-ink/70">
             At Monka, we believe that the joy of a sweet moment should never
@@ -107,8 +139,12 @@ export default function About() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl leading-[1.1] tracking-tight">
-            Innovation in the Kitchen
+          <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+            <span className="h-px w-10 bg-red" />
+            In the Kitchen
+          </span>
+          <h2 className="font-hero text-3xl md:text-5xl leading-[1.05] tracking-tight">
+            Innovation in the <em className="italic text-red">kitchen.</em>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70">
             We aren't just another sugar substitute; we are a culinary
@@ -132,48 +168,66 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl bg-red"
+          className="relative"
         >
-          <img
-            src="/monka.co.in/lifestyle-pour.jpeg"
-            alt="Monka in the kitchen"
-            className="w-full h-full object-cover"
-          />
+          <div className="absolute -inset-4 md:-inset-6 rounded-[2.5rem] bg-red/10 rotate-3" />
+          <motion.div
+            whileHover={{ rotate: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-20px_rgba(32,19,18,0.35)] -rotate-2"
+          >
+            <img
+              src="/monka.co.in/lifestyle-pour.jpeg"
+              alt="Monka in the kitchen"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </motion.div>
       </section>
 
-      <section className="bg-cream">
-        <div className="mx-auto max-w-4xl px-6 md:px-10 pb-16 md:pb-20 text-center">
+      <section className="relative bg-ink text-cream overflow-hidden">
+        <div className="relative mx-auto max-w-4xl px-6 md:px-10 pt-20 pb-16 md:pt-28 md:pb-20 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-6"
+          >
+            <span className="h-px w-10 bg-red" />
+            The Purity Promise
+            <span className="h-px w-10 bg-red" />
+          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="font-display text-3xl md:text-4xl tracking-tight"
+            className="font-sans font-black uppercase leading-[0.9] tracking-tight text-4xl md:text-6xl"
           >
-            The Purity Promise
+            Pure. Authentic. <em className="italic text-red">Ours.</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-lg leading-relaxed text-ink/70"
+            className="mt-8 text-lg leading-relaxed text-cream/60"
           >
             "Pure Ingredients. Authentic Sweetness." isn't just our tagline;
             it's our operational standard. Every batch of Monka is:
           </motion.p>
           <ul className="mt-6 space-y-2 text-left max-w-xl mx-auto">
             {PURITY_POINTS.map((point) => (
-              <li key={point.label} className="text-ink/70">
-                <span className="font-semibold text-ink">{point.label}</span>{" "}
+              <li key={point.label} className="text-cream/60">
+                <span className="font-semibold text-cream">{point.label}</span>{" "}
                 {point.detail}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 md:px-10 pb-24 md:pb-32 grid md:grid-cols-3 gap-6">
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10 pb-24 md:pb-32 grid md:grid-cols-3 gap-6">
           {PROMISE_CARDS.map((card, i) => (
             <motion.div
               key={card.title}
@@ -181,9 +235,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
+              whileHover={{ y: -6 }}
               className="rounded-2xl bg-red text-cream p-10 text-center"
             >
-              <h3 className="text-lg font-semibold tracking-wide uppercase">
+              <span className="font-hero italic text-2xl text-cream/60">{card.n}</span>
+              <h3 className="mt-3 text-lg font-semibold tracking-wide uppercase">
                 {card.title}
               </h3>
               <div className="mt-4 mb-4 h-px w-10 bg-cream/40 mx-auto" />

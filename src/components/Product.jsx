@@ -9,16 +9,17 @@ export default function Product() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="flex items-end justify-between mb-12"
+        className="flex items-end justify-between mb-16"
       >
         <div>
-          <span className="text-xs font-semibold tracking-[0.25em] uppercase text-red">
+          <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+            <span className="h-px w-10 bg-red" />
             The Range
           </span>
-          <h2 className="font-display text-3xl md:text-4xl tracking-tight mt-3">
+          <h2 className="font-hero text-4xl md:text-6xl tracking-tight">
             Shop Monka.
           </h2>
-          <p className="mt-2 text-ink/60">
+          <p className="mt-3 text-ink/60 text-lg">
             Zero calorie, zero glycemic, guaranteed no aftertaste.
           </p>
         </div>

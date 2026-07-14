@@ -9,7 +9,8 @@
       "Bash(netstat -ano)",
       "Bash(taskkill //PID 13680 //F)",
       "Bash(node sectiondump.mjs)",
-      "Bash(node reelsslider.mjs)"
+      "Bash(node reelsslider.mjs)",
+      "Bash(curl -sf http://localhost:5177)"
     ]
   }
 }

@@ -24,11 +24,13 @@ export default function SavingsCalculator() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
+          <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+            <span className="h-px w-10 bg-red" />
             See Your Savings
+            <span className="h-px w-10 bg-red" />
           </span>
-          <h2 className="font-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-            How much sugar do you <em className="italic">really</em> take?
+          <h2 className="font-hero text-4xl md:text-6xl leading-[1.02] tracking-tight">
+            How much sugar do you <em className="italic text-red">really</em> take?
           </h2>
           <p className="mt-4 text-cream/60 max-w-lg mx-auto">
             Slide to match your daily sugar habit — tea, coffee, desserts — and
@@ -73,9 +75,9 @@ export default function SavingsCalculator() {
                 viewport={{ once: false }}
                 transition={{ duration: 0.5 }}
               >
-                <p className="font-display text-4xl md:text-5xl text-cream">
+                <p className="font-sans font-black text-4xl md:text-5xl text-cream">
                   {stat.value}
-                  <span className="text-lg text-cream/50 ml-1">{stat.suffix}</span>
+                  <span className="text-lg font-medium text-cream/50 ml-1">{stat.suffix}</span>
                 </p>
                 <p className="mt-2 text-xs tracking-widest uppercase text-cream/50">
                   {stat.label}

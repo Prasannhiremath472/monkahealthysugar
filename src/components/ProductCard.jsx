@@ -76,8 +76,11 @@ export default function ProductCard({ product, i }) {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ perspective: 800 }}
-        className="aspect-square overflow-hidden"
+        className="relative aspect-square overflow-hidden rounded-3xl bg-blush"
       >
+        <span className="absolute top-4 left-4 z-10 text-[11px] font-semibold tracking-[0.15em] uppercase text-red bg-cream/90 rounded-full px-3 py-1.5 shadow-sm">
+          {product.tag}
+        </span>
         <motion.img
           style={{
             rotateX: springRotateX,
@@ -91,19 +94,17 @@ export default function ProductCard({ product, i }) {
           className="w-full h-full object-contain"
         />
       </div>
-      <div className="mt-5 flex flex-1 flex-col">
-        <span className="inline-block text-[11px] font-semibold tracking-wide uppercase text-red mb-2">
-          {product.tag}
-        </span>
+      <div className="mt-6 flex flex-1 flex-col">
         <h3 className="font-display text-lg leading-snug">{product.title}</h3>
         <p className="text-sm text-ink/60 mt-1.5">{product.detail}</p>
-        <div className="mt-3 flex flex-1 items-end justify-between">
-          <span className="font-semibold">{product.price}</span>
+        <div className="mt-4 flex flex-1 items-end justify-between border-t border-ink/10 pt-4">
+          <span className="font-hero italic text-xl">{product.price}</span>
           <a
             href="#shop"
-            className="text-sm font-semibold underline underline-offset-4 decoration-ink/30 hover:decoration-red hover:text-red transition-colors"
+            className="group/cta inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-red transition-colors"
           >
             Shop now
+            <span className="transition-transform group-hover/cta:translate-x-1">→</span>
           </a>
         </div>
       </div>

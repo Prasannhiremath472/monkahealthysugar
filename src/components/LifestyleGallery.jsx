@@ -71,11 +71,12 @@ export default function LifestyleGallery() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
+          <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+            <span className="h-px w-10 bg-red" />
             Real Kitchens
           </span>
-          <h2 className="font-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-            Made for your <em className="italic">everyday.</em>
+          <h2 className="font-hero text-4xl md:text-6xl leading-[1.02] tracking-tight">
+            Made for your <em className="italic text-red">everyday.</em>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink/70 max-w-md">
             Monka isn't reserved for special occasions — stir it into your

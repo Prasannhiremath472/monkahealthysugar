@@ -110,8 +110,8 @@ export default function Testimonials() {
         <div className="flex justify-center">
           <Stars />
         </div>
-        <h2 className="font-display text-3xl md:text-4xl tracking-tight mt-4">
-          Join 3,000+ customers living sweeter.
+        <h2 className="font-hero text-4xl md:text-6xl tracking-tight mt-5">
+          Join 3,000+ customers <em className="italic text-red">living sweeter.</em>
         </h2>
       </motion.div>
 

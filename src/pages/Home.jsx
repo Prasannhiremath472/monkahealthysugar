@@ -1,6 +1,7 @@
 import ScrollFrameSequence from "../components/ScrollFrameSequence";
 import TrustStrip from "../components/TrustStrip";
 import Philosophy from "../components/Philosophy";
+import Manifesto from "../components/Manifesto";
 import Provenance from "../components/Provenance";
 import Reels from "../components/Reels";
 import LifestyleGallery from "../components/LifestyleGallery";
@@ -17,6 +18,7 @@ export default function Home() {
       <ScrollFrameSequence />
       <TrustStrip />
       <Philosophy />
+      <Manifesto />
       <Provenance />
       <Reels />
       <LifestyleGallery />

@@ -23,8 +23,8 @@ export default function Journal() {
           transition={{ duration: 0.6 }}
           className="flex items-end justify-between mb-14"
         >
-          <h2 className="font-display text-3xl md:text-4xl tracking-tight">
-            From the <em className="italic">journal.</em>
+          <h2 className="font-hero text-4xl md:text-6xl tracking-tight">
+            From the <em className="italic text-red">journal.</em>
           </h2>
           <Link
             to="/blog"

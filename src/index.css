@@ -4,6 +4,7 @@
   --font-display: "Libre Caslon Text", ui-serif, Georgia, serif;
   --font-hero: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
 
   --color-cream: #fffdfb;
   --color-blush: #fdf1f0;
@@ -33,6 +34,10 @@ body {
 .font-hero {
   font-family: var(--font-hero);
   font-optical-sizing: auto;
+}
+
+.font-script {
+  font-family: var(--font-script);
 }
 
 .glass {

@@ -137,11 +137,12 @@ export default function Reels() {
           className="flex items-end justify-between mb-10 gap-6"
         >
           <div>
-            <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
+            <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+              <span className="h-px w-10 bg-red" />
               See It In Action
             </span>
-            <h2 className="font-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-              Monka, in <em className="italic">real kitchens.</em>
+            <h2 className="font-hero text-4xl md:text-6xl leading-[1.02] tracking-tight">
+              Monka, in <em className="italic text-red">real kitchens.</em>
             </h2>
           </div>
 

@@ -8,15 +8,16 @@ export default function Shop() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-12"
+        className="mb-16"
       >
-        <span className="text-xs font-semibold tracking-[0.25em] uppercase text-red">
+        <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+          <span className="h-px w-10 bg-red" />
           The Range
         </span>
-        <h1 className="font-display text-4xl md:text-5xl tracking-tight mt-3">
+        <h1 className="font-sans font-black uppercase leading-[0.88] tracking-tight text-5xl md:text-7xl">
           Shop Monka.
         </h1>
-        <p className="mt-2 text-ink/60">
+        <p className="mt-4 text-ink/60 text-lg">
           Zero calorie, zero glycemic, guaranteed no aftertaste.
         </p>
       </motion.div>

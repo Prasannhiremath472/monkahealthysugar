@@ -36,15 +36,27 @@ function FaqItem({ q, a }) {
 export default function Contact() {
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 md:px-10 pt-32 pb-16 md:pt-40 md:pb-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-4xl md:text-6xl tracking-tight"
-        >
-          Contact Us
-        </motion.h1>
+      <section className="relative bg-ink text-cream overflow-hidden">
+        <div className="glow top-0 right-1/4 w-[28rem] h-[28rem] bg-red/15" aria-hidden />
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10 pt-36 pb-20 md:pt-44 md:pb-28">
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-6"
+          >
+            <span className="h-px w-10 bg-red" />
+            Get In Touch
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-sans font-black uppercase leading-[0.88] tracking-tight text-5xl sm:text-7xl md:text-8xl"
+          >
+            Contact <em className="italic text-red">us.</em>
+          </motion.h1>
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 md:px-10 pb-20 md:pb-28 grid md:grid-cols-2 gap-16">

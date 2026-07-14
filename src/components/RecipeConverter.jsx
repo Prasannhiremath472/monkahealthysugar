@@ -25,11 +25,13 @@ export default function RecipeConverter() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-red mb-4">
+          <span className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] uppercase text-red mb-5">
+            <span className="h-px w-10 bg-red" />
             Baking &amp; Cooking
+            <span className="h-px w-10 bg-red" />
           </span>
-          <h2 className="font-display text-3xl md:text-5xl leading-[1.1] tracking-tight">
-            Convert any recipe, <em className="italic">instantly.</em>
+          <h2 className="font-hero text-4xl md:text-6xl leading-[1.02] tracking-tight">
+            Convert any recipe, <em className="italic text-red">instantly.</em>
           </h2>
           <p className="mt-4 text-ink/60 max-w-lg mx-auto">
             Monka is a true 1:1 sugar replacement — the exact same amount your
