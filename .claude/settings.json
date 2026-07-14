@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(taskkill //PID 2696 //F)",
+      "Bash(taskkill //PID 11556 //F)",
+      "Bash(wmic process *)",
+      "Bash(powershell -Command \"Get-CimInstance Win32_Process -Filter 'ProcessId=4352' | Select-Object CommandLine\")",
+      "Bash(taskkill //PID 4352 //F)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 13680 //F)",
+      "Bash(node sectiondump.mjs)",
+      "Bash(node reelsslider.mjs)"
+    ]
+  }
+}

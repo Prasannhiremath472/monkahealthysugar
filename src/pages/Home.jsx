@@ -2,6 +2,7 @@ import ScrollFrameSequence from "../components/ScrollFrameSequence";
 import TrustStrip from "../components/TrustStrip";
 import Philosophy from "../components/Philosophy";
 import Provenance from "../components/Provenance";
+import Reels from "../components/Reels";
 import LifestyleGallery from "../components/LifestyleGallery";
 import Product from "../components/Product";
 import RecipeConverter from "../components/RecipeConverter";
@@ -17,6 +18,7 @@ export default function Home() {
       <TrustStrip />
       <Philosophy />
       <Provenance />
+      <Reels />
       <LifestyleGallery />
       <Product />
       <RecipeConverter />
